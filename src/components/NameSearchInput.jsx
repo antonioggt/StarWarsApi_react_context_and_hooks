@@ -4,9 +4,9 @@ import FilterContext from '../context/FilterContext';
 function NameSearchInput() {
   const { setFirstFilter, dinamicFilter } = useContext(FilterContext);
 
-  function handleChanges(e) {
+  function handleChanges(ev) {
     setFirstFilter(dinamicFilter.filter((element) => (
-      element.name.includes(e.target.value))));
+      element.name.includes(ev.target.value))));
   }
   return (
     <div>
