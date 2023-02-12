@@ -73,11 +73,11 @@ it("Deve ser possível filtrar utilizando multiplos drop-down lists", async () =
   userEvent.click(secondButton);
 
   const thirdTypeSelect = screen.getByTestId('column-filter');
-  userEvent.selectOptions(secondTypeSelect, 'orbital_period');
+  userEvent.selectOptions(thirdTypeSelect, 'orbital_period');
   const thirdOperatorSelect = screen.getByTestId('comparison-filter');
-  userEvent.selectOptions(secondOperatorSelect, 'maior que');
+  userEvent.selectOptions(thirdOperatorSelect, 'maior que');
   const thirdNumberInput = screen.getByTestId('value-filter');
-  userEvent.type(secondNumberInput, '500');
+  userEvent.type(thirdNumberInput, '500');
   const thirdButton = screen.getByTestId('button-filter');
-  userEvent.click(secondButton);
+  userEvent.click(thirdButton);
 });
