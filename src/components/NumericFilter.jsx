@@ -36,7 +36,7 @@ function NumericFilter() {
     setNumberInput(target.value);
   }
 
-  function handleInitialSearch() {
+  /* function handleInitialSearch() {
     const firstComp = typeSelect === 'population';
     const secondComp = operatorSelect === 'maior que';
     const thirdComp = +numberInput === 0;
@@ -45,7 +45,7 @@ function NumericFilter() {
       return true;
     }
     return false;
-  }
+  } */
 
   function handleNumericChanges() {
     /* console.log(previState.filter((el) => +el[typeSelect] < +numberInput)); */
@@ -152,7 +152,7 @@ function NumericFilter() {
   }, [accFilters]);
 
   function handleNumericMultipleFilters() {
-    if (handleInitialSearch()) return;
+    // if (handleInitialSearch()) return;
     handleNumericChanges();
     handleMultipleFilters();
     removeTypeOptions();
