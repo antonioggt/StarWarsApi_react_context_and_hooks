@@ -81,3 +81,21 @@ it("Deve ser possível filtrar utilizando multiplos drop-down lists", async () =
   const thirdButton = screen.getByTestId('button-filter');
   userEvent.click(thirdButton);
 });
+
+it("Deve testar o organizador Descendente-Ascendente", async () => {
+  render(
+    <FilterProvider>
+      <App />
+    </FilterProvider>
+  )
+  const searchInput = screen.getByTestId('column-filter')
+  userEvent.selectOptions(searchInput, 'surface_water')
+  const ascOption = screen.getByTestId('column-sort-input-asc');
+  userEvent.click(ascOption)
+  const button = screen.getByTestId('column-sort-button');
+  userEvent.click(button);
+  await waitFor(() => {
+    const coruscant = screen.getByText(/Coruscant/i);
+    expect(coruscant).toBeInTheDocument();
+  })
+});
